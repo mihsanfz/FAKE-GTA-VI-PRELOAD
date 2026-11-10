@@ -109,6 +109,7 @@ h1 { margin: 0 0 8px; font-size: clamp(29px, 3.4vw, 45px); letter-spacing: -1.8p
 .system-nav button { padding: 5px; border: 0; background: none; color: rgba(255,255,255,.63); font-size: 17px; }
 .system-nav button:hover, .system-nav .nav-active { color: white; }
 .nav-divider { height: 18px; width: 1px; background: rgba(255,255,255,.25); }
+.creator-credit { position: absolute; left: 75%; display: block; color: rgba(255,255,255,.6); font-size: 9px; white-space: nowrap; transform: translateX(-50%); }
 .clock { font-size: 13px; letter-spacing: .4px; }
 
 .modal-backdrop { position: fixed; z-index: 5; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(3,3,8,.72); backdrop-filter: blur(7px); animation: fade-in .2s ease-out; }
@@ -227,6 +228,7 @@ h1 { margin: 0 0 8px; font-size: clamp(29px, 3.4vw, 45px); letter-spacing: -1.8p
   .bottom-bar { height: 54px; padding: 0 17px; }
   .disclaimer { max-width: 180px; font-size: 7px; line-height: 1.5; letter-spacing: .6px; }
   .system-nav { display: none; }
+  .creator-credit { left: 50%; font-size: 8px; }
   .clock { font-size: 11px; }
   .download-modal { width: min(420px, 100%); height: min(420px, 75svh); }
   .download-item { gap: 8px; padding: 10px 7px; }
