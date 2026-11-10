@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#100d1c">
+    <meta name="description" content="Simulasi layar preload GTA VI bergaya PlayStation 5. Hanya untuk bercanda.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="console" id="home" aria-hidden="true">
+      <div class="wallpaper" aria-hidden="true"></div>
+      <div class="wallpaper-shade" aria-hidden="true"></div>
+
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Kembali ke beranda" data-i18n-aria-label="home">
+          <img class="game-thumbnail" src="assets/cover-gta-vi.png" alt="">
+          <span class="ps5-logo-wrap">
+            <img class="ps5-logo custom-image" src="assets/ps-5-logo.png" alt="">
+            <span class="brand-mark image-fallback">P<span>S</span>5</span>
+          </span>
+          <span class="brand-name">Grand Theft Auto VI</span>
+          <span class="brand-loading" aria-label="Memuat" data-i18n-aria-label="loading" role="status"></span>
+        </a>
+        <div class="profile">
+          <span class="online-dot"></span>
+          <span class="profile-name" id="profile-name">PLAYER ONE</span>
+          <span class="avatar profile-avatar" id="profile-avatar" aria-hidden="true">P1</span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="game-logo" aria-label="Grand Theft Auto VI">
+            <span class="logo-grand">GRAND</span>
+            <span class="logo-theft">THEFT</span>
+            <span class="logo-auto">AUTO <span class="logo-six">VI</span></span>
+            <img class="game-logo-image custom-image" src="assets/gta-vi-logo-utama.png" alt="Logo Grand Theft Auto VI">
+          </div>
+          <p class="game-description" data-i18n="description">Pengalaman paling imersif untuk menatap progress bar <br> dan bertanya-tanya: “kok lama banget?”</p>
+
+          <div class="release-row">
+            <div class="countdown" aria-label="Hitung mundur sampai 19 November" data-i18n-aria-label="countdownLabel">
+              <span class="countdown-value" id="countdown">9d 04:08:17</span>
+            </div>
+            <button class="more-button" id="more-button" type="button" aria-label="Lihat status download" data-i18n-aria-label="downloadButton">
+              <svg class="download-symbol" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 16v4h14v-4" />
+              </svg>
+              <span class="more-dots" aria-hidden="true">•••</span>
+            </button>
+          </div>
+          <p class="size-note"><span aria-hidden="true">◫</span> <span data-i18n="fileSize">Ukuran file:</span> <strong>209,75 GB</strong> <span class="size-separator">·</span> <span data-i18n="freeSpace">Ruang kosong:</span> <strong id="disk-space">2,4 TB</strong></p>
+
+          <aside class="friends-card">
+            <div class="friends-icon" aria-hidden="true">♧</div>
+            <div>
+              <strong data-i18n="friendsTitle">Teman yang bermain</strong>
+              <span data-i18n="friendsEmpty">Belum ada. Kamu yang pertama tertipu.</span>
+            </div>
+            <a class="friend-avatars" href="https://instagram.com/m.ihsanfz" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram m.ihsanfz">
+              <span class="friend-avatar"><img class="custom-image" src="assets/foto-profil-1.png" alt=""></span>
+              <span class="friend-avatar"><img class="custom-image" src="assets/foto-profil-2.png" alt=""></span>
+              <span class="friend-avatar"><img class="custom-image" src="assets/foto-profil-3.png" alt=""></span>
+            </a>
+          </aside>
+        </div>
+
+        <div class="right-caption">
+          <span class="controller-key">R3</span>
+          <span data-i18n="terms">Health / Ratings / Privacy / Terms</span>
+        </div>
+      </section>
+
+      <footer class="bottom-bar">
+        <span class="disclaimer"><span class="disclaimer-dot"></span> <span data-i18n="disclaimer">SIMULASI FAN-MADE — TIDAK ADA FILE YANG DIUNDUH</span></span>
+        <nav class="system-nav" aria-label="Menu konsol" data-i18n-aria-label="consoleMenu">
+          <button type="button" aria-label="Beranda" data-i18n-aria-label="home" class="nav-active">⌂</button>
+          <button type="button" aria-label="Game" data-i18n-aria-label="games">▣</button>
+          <button type="button" aria-label="Notifikasi" data-i18n-aria-label="notifications">♧</button>
+          <span class="nav-divider"></span>
+          <button type="button" aria-label="Musik" data-i18n-aria-label="music">♫</button>
+          <button type="button" aria-label="Pengaturan" data-i18n-aria-label="settings">⚙</button>
+        </nav>
+        <span class="clock" id="clock">5:01 AM</span>
+      </footer>
+    </main>
+
+    <section class="library-screen" id="library-screen" aria-label="Game Library" data-library-i18n-aria-label="libraryTitle" hidden>
+      <aside class="library-rail" aria-label="Library navigation" data-library-i18n-aria-label="libraryNav">
+        <button class="rail-button rail-library" type="button" aria-label="Game Library" data-library-i18n-aria-label="libraryTitle">▦</button>
+        <div class="rail-spacer"></div>
+        <button class="rail-button" type="button" aria-label="Search" data-library-i18n-aria-label="search">⌕</button>
+        <button class="rail-button" type="button" aria-label="Sort and filter" data-library-i18n-aria-label="sortFilter">☷</button>
+        <button class="rail-button" type="button" aria-label="Accessories" data-library-i18n-aria-label="accessories">♧</button>
+      </aside>
+      <div class="library-content">
+        <header class="library-header">
+          <h1 data-library-i18n="libraryTitle">Game Library</h1>
+          <nav class="library-tabs" aria-label="Game library sections" data-library-i18n-aria-label="libraryNav">
+            <button type="button" data-library-i18n="installed">Installed</button>
+            <button type="button" class="selected" aria-current="page" data-library-i18n="collection">Your Collection</button>
+            <button type="button" data-library-i18n="playstationPlus">PlayStation Plus</button>
+          </nav>
+        </header>
+        <div class="library-toolbar">
+          <span data-library-i18n="allGames">All: 1</span>
+          <span class="library-sort"><span data-library-i18n="sortBy">Sort by:</span> <strong data-library-i18n="mostRecent">Most Recent</strong></span>
+        </div>
+        <div class="library-grid">
+          <button class="library-game" id="open-game" type="button" aria-label="Grand Theft Auto VI" data-library-i18n-aria-label="gameCover">
+            <img class="library-cover" src="assets/cover-gta-vi.png" alt="">
+          </button>
+        </div>
+      </div>
+      <div class="library-system-nav" aria-hidden="true"><span>⌂</span><span>◯</span><span>☰</span></div>
+      <span class="library-subscriber" aria-hidden="true">▣ Subscribe</span>
+    </section>
+
+    <div class="modal-backdrop" id="download-modal" hidden>
+      <section class="download-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header">
+          <span class="ps5-logo-wrap modal-ps5-logo">
+            <img class="ps5-logo custom-image" src="assets/ps-5-logo.png" alt="">
+            <span class="brand-mark image-fallback">P<span>S</span>5</span>
+          </span>
+          <h2 id="modal-title">Grand Theft Auto VI</h2>
+        </div>
+        <div class="download-preparing" id="download-preparing" role="status" aria-live="polite" hidden>
+          <span class="preparing-spinner" aria-hidden="true"></span>
+          <span data-i18n="preparing">Menyiapkan download...</span>
+        </div>
+        <div class="download-item" id="download-item">
+          <div class="cover-art">
+            <img class="custom-image" src="assets/cover-gta-vi.png" alt="">
+          </div>
+          <div class="download-info">
+            <strong class="download-title">Grand Theft Auto VI</strong>
+            <div class="download-meta" id="download-meta">21h 2m left (167.7 MB/209.750 GB)</div>
+            <div class="progress-track" role="progressbar" aria-label="Progress unduhan simulasi" data-i18n-aria-label="progressLabel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span class="progress-fill" id="progress-fill"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="username-gate" id="username-gate" aria-labelledby="welcome-title">
+      <form class="username-card" id="username-form">
+        <span class="gate-label" data-i18n="signIn">PLAYER SIGN-IN</span>
+        <h2 id="welcome-title" data-i18n="welcome">Siapa namamu?</h2>
+        <p data-i18n="welcomeText">Masukkan username untuk masuk ke game library.</p>
+        <label for="username-input" data-i18n="usernameLabel">YOUR USERNAME</label>
+        <input id="username-input" name="username" type="text" maxlength="24" autocomplete="nickname" placeholder="Contoh: Lucia" data-i18n-placeholder="usernamePlaceholder" required>
+        <label for="download-speed" data-i18n="speedLabel">DOWNLOAD SPEED</label>
+        <select id="download-speed" name="download-speed">
+          <option value="2592000000" data-speed-key="oneMonth">1 Bulan</option>
+          <option value="864000000" data-speed-key="tenDays">10 hari</option>
+          <option value="432000000" data-speed-key="fiveDays">5 hari</option>
+          <option value="172800000" data-speed-key="twoDays">2 hari</option>
+          <option value="86400000" data-speed-key="oneDay" selected>1 hari</option>
+          <option value="43200000" data-speed-key="twelveHours">12 jam</option>
+          <option value="18000000" data-speed-key="fiveHours">5 jam</option>
+          <option value="3600000" data-speed-key="oneHour">1 jam</option>
+          <option value="1800000" data-speed-key="thirtyMinutes">30 menit</option>
+          <option value="300000" data-speed-key="godMode">GOD MODE 5 menit wkwk</option>
+        </select>
+        <label for="language-select" data-i18n="languageLabel">BAHASA / LANGUAGE</label>
+        <select id="language-select" name="language">
+          <option value="id" selected>Bahasa Indonesia</option>
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="ja">日本語</option>
+          <option value="ar">العربية</option>
+          <option value="zh">中文</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="ko">한국어</option>
+          <option value="pt">Português</option>
+          <option value="it">Italiano</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+        <button type="submit"><span data-i18n="enter">Masuk</span> <span aria-hidden="true">→</span></button>
+        <span class="gate-disclaimer" data-i18n="gateDisclaimer">SIMULASI FAN-MADE — BUKAN GAME RESMI</span>
+      </form>
+    </section>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
